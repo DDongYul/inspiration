@@ -1,1 +1,23 @@
+#include <string>
+#include <cctype>
 
+using namespace std;
+
+string solution(string s) {
+    string answer = "";
+    answer=s;
+   int n=0;
+
+    for(int i=0; i<answer.length(); i++){
+        if(answer[i]==' '){
+            n=0;
+            continue;
+        }
+        if(n%2==0)
+            answer[i] = toupper(answer[i]);
+        else
+            answer[i] = tolower(answer[i]);
+        n++;
+    }
+    return answer;
+}
